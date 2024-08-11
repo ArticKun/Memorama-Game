@@ -1,0 +1,54 @@
+
+
+:root {
+  --bg: #e7e7e7;
+  --font: "Poppins", sans-serif;
+  --hotpink: #e94057;
+  --orange: #f27121;
+  --gradient: linear-gradient(35deg, var(--orange), var(--hotpink));
+  --fontColor: #333;
+  --fontColor2: rgb(227, 247, 254);
+}
+
+
+html{
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+  
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+  
+
+body {
+  margin: auto;
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: var(--font);
+}
+  
+
+@media (width <= 768px) {
+  
+  main{
+    margin-top: 5rem;
+  }
+  body .mesa {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+  }
+}
+
+
+@media (width <= 480px) {
+  
+  main{
+    margin-top: 5rem;
+  }
+  body .mesa {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(9, 1fr);
+  }
+}

@@ -1,0 +1,126 @@
+
+
+body {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    /* position: relative; */
+}
+
+
+h1{
+    text-align: center;
+    font-family: var(--font);
+    font-weight: 600;
+    font-style: normal;
+    color: var(--fontColor);
+    margin: 1rem;
+    line-height: 3.5rem;
+}
+
+
+.btn-repartir {
+    bottom: 5rem;
+    background: var(--gradient);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
+    color: white;
+    padding: 1.5rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-family: var(--font);
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.5rem;
+
+    &:hover{
+        background: #2a2a30;
+    }
+}
+
+.mesa {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
+    align-content: center;
+    margin:2rem;
+    gap: 1.5rem;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.tarjeta {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 0.3em;
+    background-image: var(--gradient);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    cursor: pointer;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+
+    animation: aparecer 0.6s forwards; /* Animación de aparición */
+    transition: transform 0.6s; 
+}
+
+.tarjeta__contenido {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    background-color: white;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0.3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+}
+
+@keyframes flip {
+    from {
+      transform: rotateY(0);
+    }
+    to {
+      transform: rotateY(180deg);
+    }
+  }
+
+.descubierta {
+    transform: rotateY(180deg);
+    animation: flip 0.6s forwards; /* Animación de voltear */
+}
+  
+.acertada {
+    opacity: 0; /* Ocultamos las tarjetas acertadas */
+}
+
+
+
+
+
+

@@ -6,7 +6,45 @@ body {
     flex-direction: column;
 }
 
+/* HEADER ========= */
+.cabecera {
+  padding: 0.5rem 2rem;
+  background: var(--bg2);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 3rem;
+}
 
+.cabecera-titulo {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  line-height: 1;
+  margin: 1rem 0;
+  color: var(--fontColor2);
+}
+
+.cabecera-num {
+  font-family: var(--font-display);
+  color: var(--orange);
+  font-weight: 400;
+  font-size: 3.5rem;
+  line-height: 0.9;
+}
+
+.contadores {
+  display: flex;
+}
+
+.contador-item {
+  margin-right: 2rem;
+}
+
+
+/* MAIN MESA - CARDS  ========= */
 main {
     flex-grow: 1;
     display: flex;
@@ -14,10 +52,11 @@ main {
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    margin-top: 4rem;
 }
 
 
-h1{
+h1 {
     text-align: center;
     font-family: var(--font);
     font-weight: 600;
@@ -43,7 +82,7 @@ h1{
     font-size: 1.5rem;
 
     &:hover{
-        background: #2a2a30;
+        background: #333138;
     }
 }
 
@@ -53,11 +92,12 @@ h1{
     grid-template-rows: repeat(3, 1fr);
     align-items: center;
     align-content: center;
-    margin:2rem;
+    margin:2rem auto 5rem auto;
     gap: 1.5rem;
 }
 
 
+/* ANIMACION REPARTIR INICIO =========== */
 @keyframes aparecer {
   from {
       opacity: 0;
@@ -109,8 +149,7 @@ h1{
 }
 
 
-/* ANIMACIONES DEL PROFESOR ========== */
-
+/* ANIMACIONES DE ACIERTO / ERROR  ========== */
 @keyframes error {
   10%,
   90% {
@@ -158,4 +197,98 @@ h1{
 
 .error {
   animation: error 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+
+
+
+/* MODAL =============== */
+
+/* Los modales Completos */
+.sube-nivel,
+.game-over,
+.end-game {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+}
+
+/* Modales visibles */
+.sube-nivel.visible,
+.game-over.visible,
+.end-game.visible {
+  display: flex;
+}
+
+.modal {
+  position: relative;
+  background: var(--gradient);
+  border-radius: 1rem;
+  padding: 3rem 3rem;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal h2 {
+  font-style: italic;
+  color: white;
+  font-family: var(--font-display);
+  margin: 0;
+}
+
+.modal p {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.modal button {
+  margin: 3rem 0;
+}
+
+
+.modal .reiniciar {
+  color: white;
+  /* background: transparent; */
+  background: var(--bg2);
+  border: 0;
+  text-transform: capitalize;
+  font-family: var(--font);
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+/* FOOTER ========= */
+footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.5rem;
+    background: var(--bg2);
+    color: var(--fontColor2);
+    margin-top: 2rem;
+
+    p{
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.5rem;
+        /* text-transform: uppercase; */
+    }
+
+    span {
+        color: var(--orange);
+    }
 }

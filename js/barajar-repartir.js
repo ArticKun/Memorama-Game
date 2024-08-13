@@ -1,6 +1,9 @@
 
 import { descubrir } from "./descubrir-comparar.js";
-import { tarjetasTotales } from "./globales.js";
+import { tarjetasTotales,titulo,btnRepartir  } from "./globales.js";
+import { reiniciarMovimientos, reiniciarTemporizador, tempCero } from "./reiniciar-contadores.js";
+import { iniciarTemporizador } from "./temporizador.js";
+
 
 
 // ✅ Barajar tarjetas
@@ -15,6 +18,21 @@ function barajaTarjetas() {
 
 // ✅ Repartir Tarjetas
 function reparteTarjetas(){
+
+    // Mostrar 00:00 en el contador de tiempo
+    tempCero();
+
+    // Ocultar Modal Final
+    document.querySelector("#endGame").classList.remove("visible");
+
+    // Mostrar Tiulo y Boton Repartir
+    titulo.classList.remove("ocultar");
+    btnRepartir.classList.remove("ocultar");
+
+    // Reiniciar contadores
+    reiniciarMovimientos();
+    reiniciarTemporizador();
+    iniciarTemporizador();
 
     const barajar = barajaTarjetas();
    
@@ -33,7 +51,7 @@ function reparteTarjetas(){
         tarjetaContenido.innerHTML = emoji;
 
         tarjeta.appendChild( tarjetaContenido );
-        tarjeta.onclick = descubrir;
+        tarjeta.onclick = descubrir; // funcion descubrir
 
         mesa.appendChild( tarjeta );
 
@@ -53,8 +71,4 @@ function reparteTarjetas(){
 
 export {
     reparteTarjetas
-}
-
-
-
-/* tarjeta.style.animation = "none"; */
+};

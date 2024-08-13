@@ -12,24 +12,51 @@
     <link rel="stylesheet" href="./css/var.css">
     <link rel="stylesheet" href="./css/app.css">
 </head>
+
 <body>
 
-    <main>
-        
-        <h1>Memory Cards</h1>
+    <!-- CRONOMETRO -->
+    <header class="cabecera">
+        <div class="contadores">
+          <div class="contador-item">
+            <h4 class="cabecera-titulo">Movimientos</h4>
+            <div class="cabecera-num">
+              <span id="mov">00</span>/<span id="mov-total">00</span>
+            </div>
+          </div>
+          <div class="contador-item">
+            <h4 class="cabecera-titulo">Tiempo</h4>
+            <div class="cabecera-num">
+              <span id="minutos">00</span>:<span id="segundos">00</span>
+            </div>
+          </div>
+        </div>
+      </header>
 
+    <!-- MESA DE CARDS -->
+    <main>
+        <h1>Memory Cards</h1>
         <button class="btn-repartir" id="btn-repartir">
             Repartir Tarjetas
         </button>
-        
-        <div id="mesa" class="mesa">
-            <!-- <div class="tarjeta">
-                <div class="tarjeta__contenido">⚡</div>
-            </div> -->
+        <!-- RENDERIZAR CARDS -->
+        <div id="mesa" class="mesa"></div>
+        <!-- MODAL FINAL -->
+        <div id="endGame" class="end-game">
+          <div class="modal">
+            <h2>¡Que Memoria!</h2>
+            <p>Has superado todos los niveles 🏆</p>
+            <button class="reiniciar">Reiniciar</button>
+          </div>
         </div>
-
     </main>
 
+    <!-- FOOTER -->
+    <footer>
+        <p> © 2024 <span>Arcade</span> Proyecto Introduccion a JS </p>
+    </footer>
+
     <script src="./js/iniciar.js" type="module"></script>
+
 </body>
 </html>

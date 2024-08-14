@@ -1,12 +1,25 @@
 
+// ✅ Modo de Juego
+const modo = {
+    modoRelax: false
+};
 
-// ✅ Crear de tarjetas
-//const grupoTarjetas   = ["⚡", "👽", "👹", "👺", "👾", "🤖", "💩", "💀", "🤙"];
+// ✅ Movimientos
+const  mov = {
+    movimientos: 0
+};
+
+// ✅ Temporizador
+const temp = {
+    temporizador:''
+};
+
+
 
 const grupoTarjetas   = [ 
     
-    ["👽","👹","👺"], //0 Level 1
-    //["👽"], //0 Level 1
+    //["👽","👹","👺"], //0 Level 1
+    ["👽","🕹️"], //0 Level 1
     ["👾","🤖","💩"], //1 level 2
     //["👾"], //1 level 2
     ["💀","🤙","🏀"], //2 level 3
@@ -45,7 +58,7 @@ const niveles = [
 
 
 // ✅ Titulo y Boton Repartir Tarjetas
-const titulo          = document.querySelector("h1");
+const titulo          = document.querySelector(".titulo-juego");
 const btnRepartir     = document.querySelector("#btn-repartir");
 
 
@@ -55,5 +68,8 @@ export {
     titulo,
     btnRepartir,
     nivelActual,
-    niveles
+    niveles,
+    mov,
+    modo,
+    temp
 };

@@ -1,32 +1,36 @@
 
 
-import { tempCero } from "./reiniciar-contadores.js";
 import { nivelActual, niveles } from "./globales.js";
 
 
-// ✅ Funcion que muestra Modales al finalizar
+// ✅ Modal para Subir Nivel o Superado los Niveles
 function finalizar() {
-
-    // Mostrar Modal Final / Subir Nivel
-    // Para no pasarnos del numero de niveles disponibles
+    // Validamos  Para no pasar del numero de niveles disponibles
     if( nivelActual.level < niveles.length - 1 ) {
+        // Modal sube nivel
         document.querySelector("#subeNivel").classList.add("visible");
     }else{
+        // Modal superado los niveles
         document.querySelector("#endGame").classList.add("visible");
     }
-
-    // Mostrar 00:00 en el contador de tiempo
-    tempCero();
 };
 
 
-// ✅ Funcion que muestra Modal GameOver al finalizar
+// ✅ Modal Cuando se acaban los Movimientos
 function gameOver(){
     document.querySelector("#gameOver").classList.add("visible");
 };
 
 
+// ✅ Modal Cuando se acaba el Tiempo
+function timerOver(){
+    document.querySelector("#timeOver").classList.add("visible");
+};
+
+
+
 export {
     finalizar,
-    gameOver
+    gameOver,
+    timerOver
 };

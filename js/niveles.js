@@ -2,6 +2,7 @@
 
 import { reparteTarjetas } from "./barajar-repartir.js";
 import { nivelActual, niveles } from "./globales.js";
+/* import { reiniciar } from "./iniciar.js"; */
 import { maxContadorMov } from "./movimientos.js";
 
 
@@ -19,8 +20,7 @@ function actualizaNivel(){
     // formatear 2 digitos
     const nivelFormateado = nivelTexto < 10 ? "0" + nivelTexto : nivelTexto;
     //actualizamos html
-    document.querySelector("#nivel").innerHTML = nivelFormateado;
-    
+    document.querySelector("#nivel").innerHTML = nivelFormateado;   
 };
 
 
@@ -30,6 +30,7 @@ function cargaNivel(){
     actualizaNivel();
     maxContadorMov();
     reparteTarjetas( niveles[nivelActual.level].nivel );
+    //reiniciar();
 };
 
 

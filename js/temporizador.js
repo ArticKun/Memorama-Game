@@ -1,13 +1,16 @@
 
-const temp = {
-    temporizador:''
-};
+
+import { timerOver } from "./finalizar.js";
+import { temp, titulo, btnRepartir, modo } from "./globales.js";
+
 
 // ✅ Iniciar Cronometro
 function iniciarTemporizador() {
 
+    //Minutos y segundos iniciales
     let minutos  = 0;
-    let segundos = 60;
+    let segundos = 5;
+
     let minTexto;
     let segTexto;
     
@@ -17,18 +20,30 @@ function iniciarTemporizador() {
         // Decrementamos 1 segundo cada vez
         segundos --;
 
-        // Actualizamos al llegar a 60 segundos
+        // Segundos que se repetiran (59) comun por minuto
+        // Cuando llegue a 0, decrementamos minutos
         if ( segundos < 0 ) {
-            segundos = 59;
+            segundos = 5;
             minutos --;
         };
 
-        // Actualizamos al llegar a 0
+        // Actualizamos al llegar a 0 en seg / min
         if ( minutos < 0 ) {
             segundos = 0;
             minutos  = 0;
             //Detenemos el temporizador
             clearInterval( temp.temporizador );
+            // Mostrar Modal Cuando se acaba el Tiempo
+            if( !modo.modoRelax ) {
+                timerOver();
+                //✅ Limpiar HTML
+                const mesa = document.querySelector("#mesa");
+                mesa.innerHTML = ""; // limpiar mesa previa
+                //Ocultar Boton Repartir, titulo al mostrar Modal Final
+                titulo.classList.add("ocultarTituloButton");
+                btnRepartir.classList.add("ocultarTituloButton");
+                return;
+            }
         };
 
         // Actualizar Texto
@@ -57,6 +72,5 @@ function iniciarTemporizador() {
 
 
 export {
-    iniciarTemporizador,
-    temp
+    iniciarTemporizador
 };

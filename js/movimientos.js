@@ -1,12 +1,9 @@
 
 
-import { nivelActual,niveles } from "./globales.js";
+import { nivelActual,niveles, mov, modo } from "./globales.js";
 import { gameOver } from "./finalizar.js";
 
-// ✅ Movimientos
-export const  mov = {
-    movimientos: 0
-};
+
 
 function actualizarMovimientos() {
 
@@ -16,11 +13,15 @@ function actualizarMovimientos() {
     // Asignamos valor de movimientos a texto
     movTexto = mov.movimientos;
 
-    //  validamos que movimientos no supere el maximo de movimientos
-    if( mov.movimientos > niveles[nivelActual.level].movimientosMax ) {
+    // validamos que movimientos no supere el maximo permitido
+    // y que la alerta no se muestre en modo relax
+    if( mov.movimientos > niveles[nivelActual.level].movimientosMax 
+        && !modo.modoRelax ) 
+    {
         gameOver();
         return;
     };
+
     // formatear 2 digitos
     movTexto = movTexto < 10 ? "0" + movTexto : movTexto;
     // Actualizar Texto en HTML

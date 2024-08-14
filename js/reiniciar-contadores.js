@@ -1,6 +1,6 @@
 
-import { mov } from "./movimientos.js";
-import { temp } from "./temporizador.js";
+import { mov } from "./globales.js";
+import { temp } from "./globales.js";
 
 
 // ✅ Reiniciar movimientos

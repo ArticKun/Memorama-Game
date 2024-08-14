@@ -3,7 +3,7 @@ import { acierto, error } from "./acierto-error.js";
 import { actualizarMovimientos } from "./movimientos.js";
 import { finalizar } from "./finalizar.js";
 import { titulo, btnRepartir } from "./globales.js";
-import { reiniciarMovimientos, reiniciarTemporizador } from "./reiniciar-contadores.js";
+import { reiniciarTemporizador } from "./reiniciar-contadores.js";
 
 
 // ✅ Voltear Tarjetas( max 2 tarjetas )
@@ -28,7 +28,7 @@ function descubrir(e){
 
     // Validar si dos tarjetas son iguales o no
     comparar( descubiertas );
-
+    
     // Contador de Movimientos
     actualizarMovimientos();
 
@@ -39,12 +39,13 @@ function descubrir(e){
     // Si las No acertadas son = 0 es que ya se han descubierto todas
     if ( pendientes.length === 0 ) {
         setTimeout( () => {
-            //Ocultar Boton Repartir, titulo y mostrar Modal Final
-            titulo.classList.add("ocultar");
-            btnRepartir.classList.add("ocultar");
+            //✅ Ocultar Boton Repartir, titulo al mostrar Modal Final
+            titulo.classList.add("ocultarTituloButton");
+            btnRepartir.classList.add("ocultarTituloButton");
+            //✅ Mostrar Modal Final
             finalizar();
-            // Reiniciar contadores
-            reiniciarMovimientos();
+            //✅ Reiniciar temporizador cuando esta el Modal Final
+            //reiniciarMovimientos();
             reiniciarTemporizador();
         },1000);
     };

@@ -1,9 +1,7 @@
 
 import { descubrir } from "./descubrir-comparar.js";
 import { titulo,btnRepartir  } from "./globales.js";
-import { reiniciarMovimientos, reiniciarTemporizador, tempCero } from "./reiniciar-contadores.js";
-import { iniciarTemporizador } from "./temporizador.js";
-
+import { reiniciar } from "./iniciar.js";
 
 
 // ✅ Barajar tarjetas
@@ -20,23 +18,13 @@ function barajaTarjetas( level ) {
 // ✅ Repartir Tarjetas
 function reparteTarjetas( level ) {
 
-    // Mostrar 00:00 en el contador de tiempo
-    tempCero();
+    //Reiniciar e iniciar temporizador aqui,empieza de nuevo en cada click 
+    //en el boton repartir tarjetas, Funciona como un boton de reset 
+    reiniciar();
 
-    // Ocultar Modales
-    document.querySelector("#subeNivel").classList.remove("visible");
-    document.querySelector("#gameOver").classList.remove("visible");
-    document.querySelector("#timeOver").classList.remove("visible");
-    document.querySelector("#endGame").classList.remove("visible");
-
-    // Mostrar Tiulo y Boton Repartir
-    titulo.classList.remove("ocultar");
-    btnRepartir.classList.remove("ocultar");
-
-    // Reiniciar contadores
-    reiniciarMovimientos();
-    reiniciarTemporizador();
-    iniciarTemporizador();
+    // ✅ Mostrar Titulo y Boton Repartir
+    titulo.classList.remove("ocultarTituloButton");
+    btnRepartir.classList.remove("ocultarTituloButton");
 
     // Barajamos tarjetas segun nivel
     const barajar = barajaTarjetas( level );

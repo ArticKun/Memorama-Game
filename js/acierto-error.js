@@ -5,6 +5,8 @@ function acierto( descubiertas ) {
     descubiertas.forEach( elemento => {
       elemento.classList.add( "acertada" );
     });
+    //Agregamos sonido
+    document.querySelector("#sonido-acierto").play();
 };
 
 
@@ -15,6 +17,9 @@ function error( descubiertas ) {
     descubiertas.forEach( elemento => {
       elemento.classList.add("error");
     });
+
+    //Agregamos sonido
+    document.querySelector("#sonido-error").play();
   
     setTimeout( () => {
       descubiertas.forEach( elemento => {
@@ -23,11 +28,6 @@ function error( descubiertas ) {
       });
     }, 1000);
 };
-
-
-// ✅ Mostrar cantidad de movimientos 
-
-// ✅ Mostrar Aciertos y errores al usuario
 
 
 export {

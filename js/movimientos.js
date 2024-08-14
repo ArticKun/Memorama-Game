@@ -1,5 +1,8 @@
 
 
+import { nivelActual,niveles } from "./globales.js";
+import { gameOver } from "./finalizar.js";
+
 // ✅ Movimientos
 export const  mov = {
     movimientos: 0
@@ -13,16 +16,31 @@ function actualizarMovimientos() {
     // Asignamos valor de movimientos a texto
     movTexto = mov.movimientos;
 
-    // formato de 2 cifras
-    if( mov.movimientos < 10 ) {
-        movTexto = '0' + mov.movimientos;
+    //  validamos que movimientos no supere el maximo de movimientos
+    if( mov.movimientos > niveles[nivelActual.level].movimientosMax ) {
+        gameOver();
+        return;
     };
-
+    // formatear 2 digitos
+    movTexto = movTexto < 10 ? "0" + movTexto : movTexto;
     // Actualizar Texto en HTML
     document.querySelector('#mov').innerHTML = movTexto;
 };
 
 
+// ✅ Actualiza movimientos max en cada nivel
+function maxContadorMov() {
+
+    const movMaxTexto = niveles[nivelActual.level].movimientosMax;
+    // formatear 2 digitos
+    const movMax = movMaxTexto < 10 ? "0" + movMaxTexto : movMaxTexto;
+    // Actualizar Texto en HTML
+    document.querySelector('#mov-total').innerText = movMax;
+};
+
+
+
 export {
-    actualizarMovimientos
+    actualizarMovimientos,
+    maxContadorMov
 };

@@ -15,38 +15,65 @@
 
 <body>
 
-  <header class="cabecera">
-    <div class="contadores">
-          <!-- MOVIMIENTOS -->
-          <div class="contador-item">
-            <h4 class="cabecera-titulo">Movimientos</h4>
-            <div class="cabecera-num">
-              <span id="mov">00</span>/<span id="mov-total">00</span>
-            </div>
-          </div>
-          <!-- TEMPORIZADOR -->
-          <div id="cronometro" class="contador-item">
-            <h4 class="cabecera-titulo">Tiempo</h4>
-            <div class="cabecera-num">
-              <span id="minutos">00</span>:<span id="segundos">00</span>
-            </div>
-          </div>
-    </div>
-    <!-- NIVELES -->
-    <div class="nivel">
-      <h4 class="cabecera-titulo">Nivel</h4>
-      <div class="cabecera-num"><span id="nivel">01</span></div>
-    </div>
-  </header>
+  <div class="container">
 
-    <!-- MESA DE CARDS -->
+    <header class="cabecera">
+      <div class="contadores">
+            <!-- MOVIMIENTOS -->
+            <div class="contador-item">
+              <h4 class="cabecera-titulo">Mov / Max</h4>
+              <div class="cabecera-num">
+                <span id="mov">00</span>/<span id="mov-total">00</span>
+              </div>
+            </div>
+            <!-- TEMPORIZADOR -->
+            <div id="cronometro" class="contador-item">
+              <h4 class="cabecera-titulo">Tiempo</h4>
+              <div class="cabecera-num">
+                <span id="minutos">00</span>:<span id="segundos">00</span>
+              </div>
+            </div>
+      </div>
+      <!-- NIVEL DIFUCULTAD -->
+      <div class="nivel">
+        <h4 class="cabecera-titulo">Nivel</h4>
+        <div class="cabecera-num"><span id="nivel">01</span></div>
+      </div>
+    </header>
+  
     <main>
+      <!-- TITULO / REPARTIR CARTAS -->
         <h1>Memory Cards</h1>
-        <button class="btn-repartir" id="btn-repartir">
-            Repartir Tarjetas
-        </button>
+        <button class="btn-repartir" id="btn-repartir">Repartir Tarjetas</button>
+  
         <!-- RENDERIZAR CARDS -->
         <div id="mesa" class="mesa"></div>
+  
+        <!-- SUBE NIVEL  -->
+        <div id="subeNivel" class="sube-nivel">
+          <div class="modal">
+            <h2>¡Muy bien!</h2>
+            <button id="subir">Siguiente nivel</button>
+            <button class="reiniciar">Reiniciar</button>
+          </div>
+        </div>
+        <!--  GAME OVER  TIME OVER -->
+        <div id="gameOver" class="game-over">
+          <div class="modal">
+            <h2>¡Oh no!</h2>
+            <p>Te has quedado sin movimientos 😭</p>
+            <button class="reiniciar">Reiniciar</button>
+          </div>
+        </div>
+        <!-- TIME OVER -->
+        <div id="timeOver" class="game-over">
+          <div class="modal">
+            <h2>¡Oh no!</h2>
+            <p>Te has quedado sin tiempo 😭</p>
+            <button class="reiniciar">Reiniciar</button>
+          </div>
+        </div>
+  
         <!-- MODAL FINAL -->
         <div id="endGame" class="end-game">
           <div class="modal">
@@ -57,12 +84,33 @@
         </div>
     </main>
 
+    <!-- SONIDOS -->
+     <audio src="./sonidos/acierto.mp3"
+        class="sonido"
+        id="sonido-acierto"
+        preload="auto"
+     ></audio>
+     <audio src="./sonidos/error.mp3"
+        class="sonido"
+        id="sonido-error"
+        preload="auto"
+     ></audio>
+     <audio src="./sonidos/carta.mp3"
+        class="sonido"
+        id="sonido-carta"
+        preload="auto"
+     ></audio>
+  
     <!-- FOOTER -->
     <footer>
         <p> © 2024 <span>Arcade</span> Proyecto Introduccion a JS </p>
     </footer>
+    
+  </div>
 
-    <script src="./js/iniciar.js" type="module"></script>
+
+  <!-- SCRIPT -->
+  <script src="./js/iniciar.js" type="module"></script>
 
 </body>
 </html>

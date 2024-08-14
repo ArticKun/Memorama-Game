@@ -15,7 +15,13 @@ body {
   justify-content: space-evenly;
   align-items: baseline;
   padding: 3rem;
-  z-index: 10;
+  /* z-index: 10; */
+}
+
+.nivel{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .cabecera-titulo {
@@ -38,22 +44,26 @@ body {
 
 .contadores {
   display: flex;
+  gap: 2rem;
 }
 
 .contador-item {
-  margin-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin-right: 2rem; */
 }
 
 
 /* MAIN MESA - CARDS  ========= */
 main {
-    flex-grow: 1;
+    /* flex-grow: 1; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    margin-top: 4rem;
+    margin-top: 5rem;
 }
 
 
@@ -69,32 +79,48 @@ h1 {
 
 
 .btn-repartir {
-    bottom: 5rem;
-    background: var(--gradient);
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
-    color: white;
-    padding: 1.5rem 1.5rem;
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    font-family: var(--font);
-    font-weight: 300;
-    font-style: normal;
-    font-size: 1.5rem;
+  bottom: 5rem;
+  background: var(--gradient);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
+  color: white;
+  padding: 1.5rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-family: var(--font);
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1.5rem;
 
-    &:hover{
-        background: #333138;
-    }
+  &:hover{
+      background: #333138;
+  }
+}
+
+button{
+  color: white;
+  /* background: transparent; */
+  background: var(--gradient);
+  border: 0;
+  margin: 0;
+  text-transform: capitalize;
+  font-family: var(--font);
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .mesa {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    align-items: center;
-    align-content: center;
-    margin:2rem auto 5rem auto;
-    gap: 1.5rem;
+  max-width: 75rem;
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-grow: 1; */
+  justify-content: center;
+  align-items: center;
+  margin:2rem;
+  gap: 1.5rem;
 }
 
 
@@ -115,8 +141,8 @@ h1 {
 }
 
 .tarjeta {
-    width: 8rem;
-    height: 8rem;
+    width: 6.5rem;
+    height: 6.5rem;
     border-radius: 0.3em;
     background-image: var(--gradient);
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
@@ -216,7 +242,7 @@ h1 {
   left: 0;
   right: 0;
   /* background-image: var(--gradient); */
-  background: rgba(0, 0, 0, 0.515);
+  background: rgba(0, 0, 0, 0.599);
 }
 
 /* Modales visibles */
@@ -257,10 +283,11 @@ h1 {
 
 
 .modal .reiniciar {
-  color: white;
+  /* color: white; */
   /* background: transparent; */
   background: var(--bg2);
-  border: 0;
+  margin: 0;
+  /* border: 0;
   text-transform: capitalize;
   font-family: var(--font);
   font-size: 1.5rem;
@@ -268,7 +295,7 @@ h1 {
   padding: 1rem 2rem;
   border-radius: 0.5rem;
   cursor: pointer;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2); */
 }
 
 
@@ -280,7 +307,7 @@ footer {
     background: var(--bg2);
     color: var(--fontColor2);
     margin-top: 2rem;
-    z-index: 10;
+    /* z-index: 10; */
 
     p{
         font-weight: 400;

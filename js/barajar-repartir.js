@@ -1,13 +1,15 @@
 
 import { descubrir } from "./descubrir-comparar.js";
-import { tarjetasTotales,titulo,btnRepartir  } from "./globales.js";
+import { titulo,btnRepartir  } from "./globales.js";
 import { reiniciarMovimientos, reiniciarTemporizador, tempCero } from "./reiniciar-contadores.js";
 import { iniciarTemporizador } from "./temporizador.js";
 
 
 
 // ✅ Barajar tarjetas
-function barajaTarjetas() {
+function barajaTarjetas( level ) {
+    // Duplicar tarjetas para crear pares
+    const tarjetasTotales = [...level, ...level ]; 
     let resultado;
     resultado = tarjetasTotales.sort( () => {
         return 0.5 - Math.random();
@@ -15,14 +17,16 @@ function barajaTarjetas() {
     return resultado;
 };
 
-
 // ✅ Repartir Tarjetas
-function reparteTarjetas(){
+function reparteTarjetas( level ) {
 
     // Mostrar 00:00 en el contador de tiempo
     tempCero();
 
-    // Ocultar Modal Final
+    // Ocultar Modales
+    document.querySelector("#subeNivel").classList.remove("visible");
+    document.querySelector("#gameOver").classList.remove("visible");
+    document.querySelector("#timeOver").classList.remove("visible");
     document.querySelector("#endGame").classList.remove("visible");
 
     // Mostrar Tiulo y Boton Repartir
@@ -34,13 +38,14 @@ function reparteTarjetas(){
     reiniciarTemporizador();
     iniciarTemporizador();
 
-    const barajar = barajaTarjetas();
-   
+    // Barajamos tarjetas segun nivel
+    const barajar = barajaTarjetas( level );
+    
     const mesa = document.querySelector("#mesa");
 
     mesa.innerHTML = ""; // limpiar mesa previa
 
-    // Crear Tarjeta
+    // ⚡ Crear Tarjeta
     barajar.forEach( (emoji, index ) => {
         const tarjeta = document.createElement("div");
         tarjeta.classList.add("tarjeta","aparecer"); //Animacion aparecer
@@ -57,7 +62,7 @@ function reparteTarjetas(){
 
         //Animacion entrada Delay
         setTimeout(() => {
-            tarjeta.style.animationDelay = `${index * 0.04}s`;
+            tarjeta.style.animationDelay = `${index * 0.03}s`;
         });
         
         //remover animacion aparecer y Delay

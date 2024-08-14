@@ -11,6 +11,10 @@ function descubrir(e){
 
     // Añade clase descubierta a tarjeta clicada
     e.target.classList.add("descubierta"); 
+    
+    //Agregamos sonido / cloneNode() para almacenar el sonido
+    // en la memoria del nav y que no demore el tiempo de reproducirlo
+    document.querySelector("#sonido-carta").cloneNode().play();
 
     // seleccionamos tarjeta clase descubierta y no clase acertada
     // Porque las acertadas no se borran solo se ocultan

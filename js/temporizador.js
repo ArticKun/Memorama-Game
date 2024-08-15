@@ -31,8 +31,8 @@ function iniciarTemporizador( ) {
         minutos  = 3;
         segundos = 59;
     }else if( nivelActual.level === 4 ){
-        minutos  = 4;
-        segundos = 59;
+        minutos  = 0;
+        segundos = 5;
     }
 
     //Mostrar minutos y seg en Texto

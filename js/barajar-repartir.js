@@ -18,6 +18,7 @@ function barajaTarjetas( level ) {
 // ✅ Repartir Tarjetas
 function reparteTarjetas( level ) {
 
+    
     //Reiniciar e iniciar temporizador aqui,empieza de nuevo en cada click 
     //en el boton repartir tarjetas, Funciona como un boton de reset 
     reiniciar();

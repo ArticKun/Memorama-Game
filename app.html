@@ -15,6 +15,7 @@
 
 <body>
 
+  <!-- CONTENEDOR PRINCIPAL FOOTER RESPONSIVO-->
   <div class="container">
 
     <!-- PANTALLA INICIO -->
@@ -26,6 +27,7 @@
       </div>
     </div>
 
+    <!-- HEADER -->
     <header class="cabecera">
       <div class="contadores">
             <!-- MOVIMIENTOS -->
@@ -48,12 +50,15 @@
         <h4 class="cabecera-titulo">Nivel</h4>
         <div class="cabecera-num"><span id="nivel">01</span></div>
       </div>
+      <!-- CONTROL ASIDE MENU -->
+      <button id="control-nivel" class="control-nivel">...</button>
     </header>
-  
+    
+    <!-- MESA -->
     <main>
       <!-- TITULO / REPARTIR CARTAS -->
         <h1 class="titulo-juego">Memory Cards</h1>
-        <button class="btn-repartir" id="btn-repartir">Repartir Tarjetas</button>
+        <button class="btn-repartir" id="btn-repartir">Barajar Tarjetas</button>
   
         <!-- RENDERIZAR CARDS -->
         <div id="mesa" class="mesa"></div>
@@ -93,27 +98,30 @@
     </main>
 
     <!-- MENU LATERAL -->
-    <!-- <div class="selecciona-nivel">
+    <div class="selecciona-nivel">
       <button id="cierra-niveles" class="cierra-niveles">&times;</button>
       <ul></ul>
-    </div> -->
+      <button id="config" class="config">⚙️</button>
+    </div>
 
     <!-- SONIDOS -->
-     <audio src="./sonidos/acierto.mp3"
-        class="sonido"
-        id="sonido-acierto"
-        preload="auto"
-     ></audio>
-     <audio src="./sonidos/error.mp3"
-        class="sonido"
-        id="sonido-error"
-        preload="auto"
-     ></audio>
-     <audio src="./sonidos/carta.mp3"
-        class="sonido"
-        id="sonido-carta"
-        preload="auto"
-     ></audio>
+     <div>
+       <audio src="./sonidos/acierto.mp3"
+          class="sonido"
+          id="sonido-acierto"
+          preload="auto"
+       ></audio>
+       <audio src="./sonidos/error.mp3"
+          class="sonido"
+          id="sonido-error"
+          preload="auto"
+       ></audio>
+       <audio src="./sonidos/carta.mp3"
+          class="sonido"
+          id="sonido-carta"
+          preload="auto"
+       ></audio>
+     </div>
   
     <!-- FOOTER -->
     <footer>

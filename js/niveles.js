@@ -2,8 +2,8 @@
 
 import { reparteTarjetas } from "./barajar-repartir.js";
 import { nivelActual, niveles } from "./globales.js";
-/* import { reiniciar } from "./iniciar.js"; */
 import { maxContadorMov } from "./movimientos.js";
+
 
 
 
@@ -30,7 +30,6 @@ function cargaNivel(){
     actualizaNivel();
     maxContadorMov();
     reparteTarjetas( niveles[nivelActual.level].nivel );
-    //reiniciar();
 };
 
 

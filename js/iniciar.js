@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const bienvenida = document.querySelector("#bienvenida");
     bienvenida.classList.add("visible");
 
-    // Selccionamos botones
+    // Seleccionamos botones
     const botonJuegoNormal = document.querySelector("#juego-normal");
     const botonJuegoRelax  = document.querySelector("#juego-relax");
 

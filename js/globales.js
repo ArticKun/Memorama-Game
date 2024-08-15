@@ -16,12 +16,11 @@ const temp = {
 
 
 
+
 const grupoTarjetas   = [ 
     
-    //["👽","👹","👺"], //0 Level 1
-    ["👽","🕹️"], //0 Level 1
+    ["👽","👹","👺"], //0 Level 1
     ["👾","🤖","💩"], //1 level 2
-    //["👾"], //1 level 2
     ["💀","🤙","🏀"], //2 level 3
     ["🎁","🕹️","⚔️"], //3 level 4
     ["🎹","🥶","😶‍🌫️"], //4 level 5
@@ -44,7 +43,7 @@ const niveles = [
     },
     {
         nivel: [...grupoTarjetas[0], ...grupoTarjetas[1], ...grupoTarjetas[2]],
-        movimientosMax: 50  
+        movimientosMax: 50 
     },
     {
         nivel: [...grupoTarjetas[0], ...grupoTarjetas[1], ...grupoTarjetas[2], ...grupoTarjetas[3]],

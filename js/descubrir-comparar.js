@@ -45,7 +45,6 @@ function descubrir(e){
             //✅ Mostrar Modal Final
             finalizar();
             //✅ Reiniciar temporizador cuando esta el Modal Final
-            //reiniciarMovimientos();
             reiniciarTemporizador();
         },1000);
     };

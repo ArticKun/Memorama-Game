@@ -3,6 +3,7 @@ import { niveles, nivelActual, modo } from "./globales.js";
 import { Iniciar, reiniciar } from "./iniciar.js";
 import { maxContadorMov } from "./movimientos.js";
 import { actualizaNivel } from "./niveles.js";
+import { reiniciarTemporizador } from "./reiniciar-contadores.js";
 
 
 // ✅ Escritura de niveles
@@ -70,6 +71,7 @@ const botonConfig = document.querySelector("#config");
 
 botonConfig.addEventListener("click", () => {
     location.reload();
+    reiniciarTemporizador();
 });
 
 

@@ -58,7 +58,6 @@ body {
   align-items: center;
   text-align: center;
   padding: 3rem;
-  /* z-index: 10; */
 }
 
 .nivel{
@@ -94,13 +93,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* margin-right: 2rem; */
 }
 
 
 /* ✅ MAIN MESA - CARDS  ========= */
 main {
-    /* flex-grow: 1; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -142,7 +139,6 @@ h1 {
 
 button{
   color: white;
-  /* background: transparent; */
   background: var(--gradient);
   border: 0;
   margin: 0;
@@ -159,7 +155,6 @@ button{
   max-width: 75rem;
   display: flex;
   flex-wrap: wrap;
-  /* flex-grow: 1; */
   justify-content: center;
   align-items: center;
   margin:2rem;
@@ -448,7 +443,6 @@ footer {
     background: var(--bg2);
     color: var(--fontColor2);
     margin-top: 2rem;
-    /* z-index: 10; */
 
     p{
         font-weight: 400;
